@@ -1,0 +1,84 @@
+/* Estilos generales para el body y html */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    background: url('../img/fondo.png') no-repeat center center fixed;
+    background-size: cover;
+}
+
+/* Estilo para el contenedor del formulario de inicio de sesión */
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+/* Estilo para el cuadro de inicio de sesión */
+.login-box {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 400px;
+    width: 100%;
+}
+
+/* Estilo para el título */
+h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #181717; /* Cambio a blanco para mayor contraste */
+}
+
+/* Estilo para las etiquetas de los campos */
+label {
+    display: block;
+    padding-left: 10px;
+    text-align: left;
+    width: 100%;
+    color: #080808; /* Cambio a blanco para mayor contraste */
+}
+
+/* Estilo para los campos de entrada de texto y contraseña */
+input[type="text"],
+input[type="password"] {
+    width: calc(100% - 20px); /* Ajuste del ancho para evitar desbordamiento */
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box; /* Incluye padding y border en el ancho total */
+}
+
+/* Estilo para el botón */
+button {
+    width: calc(100% - 20px);
+    padding: 10px 0px;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Estilo para el estado hover del botón */
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Estilo para el logo */
+.logo {
+    width: 100px;
+    margin-bottom: 20px; /* Espacio debajo del logo */
+}

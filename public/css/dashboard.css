@@ -1,0 +1,109 @@
+/* Estilos generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Contenedor principal */
+.container {
+    display: flex;
+    height: 100vh;
+}
+
+/* Barra lateral */
+.sidebar {
+    width: 250px;
+    background-color: #2c3e50;
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+/* Enlaces en la barra lateral */
+.sidebar a {
+    text-decoration: none;
+    color: #ecf0f1;
+    width: 100%;
+    text-align: left;
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    transition: background-color 0.3s, color 0.3s;
+    border-radius: 5px;
+}
+
+.sidebar a:hover {
+    background-color: #34495e;
+    color: #fff;
+}
+
+/* Iconos en la barra lateral */
+.sidebar .icon {
+    margin-right: 10px;
+    height: 20px;
+}
+
+/* Logo en la barra lateral */
+.sidebar .logo {
+    margin-top: auto;
+    margin-bottom: 20px;
+    width: 150px;
+    height: auto;
+}
+
+/* Contenido principal */
+.main-content {
+    flex: 1;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra el contenido horizontalmente */
+    justify-content: center; /* Centra el contenido verticalmente */
+    text-align: center; /* Alinea el texto al centro */
+}
+
+/* Títulos */
+h1 {
+    font-size: 28px;
+    color: #2c3e50;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 10px;
+}
+
+/* Párrafos */
+p {
+    font-size: 16px;
+    margin-bottom: 15px;
+    color: #555;
+}
+
+/* Botón de cerrar sesión */
+.logout-button {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    margin-top: 20px; /* Añade un espacio arriba del botón */
+}
+
+.logout-button:hover {
+    background-color: #c0392b;
+}
