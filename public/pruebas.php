@@ -91,6 +91,7 @@ $conn->close();
             <a href="historiaclinica.php"><img src="img/clinical_history.png" alt="Historia clínica" class="icon">Historia clínica</a>
             <a href="pruebas.php"><img src="img/tests_done.png" alt="Pruebas realizadas" class="icon">Pruebas realizadas</a>
             <a href="reportecitas.php"><img src="img/appointment_report.png" alt="Reporte de citas" class="icon">Reporte de citas</a>
+            <a href="pacientes.php"><img src="img/appointment_report.png" alt="Reporte de pacientes" class="icon">Reporte de pacientes</a>
             <a href="usuarios.php"><img src="img/register_user.png" alt="Registrar usuarios" class="icon">Registrar usuarios</a>
             <img src="img/Logo.png" alt="Logo" class="logo">
         </div>
@@ -125,24 +126,23 @@ $conn->close();
                         <button type="button" id="actualizar-btn" onclick="updatePrueba()">Actualizar</button>
                     </div>
                 </form>
-
-                <h2>Pruebas Asociadas</h2>
-                <table id="pruebas-paciente-table" class="tabla-personalizada">
-                    <thead>
-                        <tr>
-                            <th>Nombre de la Prueba</th>
-                            <th>Resultado</th>
-                            <th>Fecha de la Cita</th>
-                            <th>Hora de la Cita</th>
-                            <th>Archivo</th>
-                            <th>Acciones</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <!-- Aquí se cargarán los datos de las pruebas -->
-                    </tbody>
-                </table>
             </div>
+            <h2 class="titulo-tablaPruebas">Pruebas Asociadas</h2>
+            <table id="pruebas-paciente-table" class="tabla-personalizada">
+                <thead>
+                    <tr>
+                        <th>Nombre de la Prueba</th>
+                        <th>Resultado</th>
+                        <th>Fecha de la Cita</th>
+                        <th>Hora de la Cita</th>
+                        <th>Archivo</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Aquí se cargarán los datos de las pruebas -->
+                </tbody>
+            </table>
         </div>
     </div>
     <script>

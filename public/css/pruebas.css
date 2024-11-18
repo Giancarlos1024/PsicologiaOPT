@@ -7,7 +7,7 @@ body {
 
 .container {
     display: flex;
-    height: 100vh;
+    /* background-color: #27ae60; */
 }
 
 .sidebar {
@@ -37,7 +37,7 @@ body {
 .sidebar a {
     color: #ecf0f1;
     text-decoration: none;
-    margin: 15px 0;
+    margin: 10px 0;
     display: flex;
     align-items: center;
     padding: 10px;
@@ -58,7 +58,7 @@ body {
 }
 
 .sidebar img.logo {
-    width: 120px;
+    width: 100px;
     margin: 20px 0;
 }
 
@@ -67,6 +67,8 @@ body {
     padding: 20px;
     margin-left: 250px; /* Same as sidebar width */
     position: relative;
+    /* background-color: aqua; */
+    height: 100%;
 }
 
 .logout-button {
@@ -98,6 +100,9 @@ body {
 .form-container h2 {
     text-align: center;
     margin-bottom: 20px;
+}
+.titulo-tablaPruebas{
+    text-align: center;
 }
 
 .form-container label {

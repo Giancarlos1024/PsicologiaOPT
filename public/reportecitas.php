@@ -24,6 +24,12 @@ if (isset($_POST['update'])) {
 // Obtener citas
 $result = $conn->query("SELECT * FROM citas") or die($conn->error);
 
+// Verificar si la tabla está vacía
+if ($result->num_rows == 0) {
+    // Reiniciar el contador del auto-incremento
+    $conn->query("ALTER TABLE citas AUTO_INCREMENT = 1") or die($conn->error);
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -42,6 +48,7 @@ $result = $conn->query("SELECT * FROM citas") or die($conn->error);
             <a href="historiaclinica.php"><img src="img/clinical_history.png" alt="Historia clínica" class="icon">Historia clínica</a>
             <a href="pruebas.php"><img src="img/tests_done.png" alt="Pruebas realizadas" class="icon">Pruebas realizadas</a>
             <a href="reportecitas.php"><img src="img/appointment_report.png" alt="Reporte de citas" class="icon">Reporte de citas</a>
+            <a href="pacientes.php"><img src="img/appointment_report.png" alt="Reporte de pacientes" class="icon">Reporte de pacientes</a>
             <a href="usuarios.php"><img src="img/register_user.png" alt="Registrar usuarios" class="icon">Registrar usuarios</a>
             <img src="img/Logo.png" alt="Logo" class="logo">
         </div>
@@ -73,8 +80,10 @@ $result = $conn->query("SELECT * FROM citas") or die($conn->error);
                                 <td><?php echo $row['estado']; ?></td>
                                 <td><?php echo $row['notas']; ?></td>
                                 <td class="buttonReport">
-                                    <a href="reportecitas.php?edit=<?php echo $row['id_cita']; ?>" class="edit-button">Editar</a>
-                                    <a href="reportecitas.php?delete=<?php echo $row['id_cita']; ?>" class="delete-button" onclick="return confirm('¿Está seguro de eliminar esta cita?');">Eliminar</a>
+                                    <div>
+                                        <a href="reportecitas.php?edit=<?php echo $row['id_cita']; ?>" class="edit-button">Editar</a>
+                                        <a href="reportecitas.php?delete=<?php echo $row['id_cita']; ?>" class="delete-button" onclick="return confirm('¿Está seguro de eliminar esta cita?');">Eliminar</a>
+                                    </div>
                                 </td>
                             </tr>
                         <?php endwhile; ?>

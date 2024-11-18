@@ -17,10 +17,10 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 -- Crear la base de datos
--- CREATE DATABASE IF NOT EXISTS fdf_psicologia;
+CREATE DATABASE IF NOT EXISTS fdf_psicologia;
 
--- -- Seleccionar la base de datos para usar
--- USE fdf_psicologia;
+-- Seleccionar la base de datos para usar
+USE fdf_psicologia;
 
 -- --------------------------------------------------------
 
@@ -154,6 +154,22 @@ SELECT * FROM citas;
 SELECT * FROM historias_clinicas;
 SELECT * FROM pruebas_aplicadas;
 
+-- elminar la clave foreana actual
+ALTER TABLE historias_clinicas
+DROP FOREIGN KEY historias_clinicas_fk_paciente;
+-- ejecutar esta para la clave foreana actualizada
+ALTER TABLE historias_clinicas
+ADD CONSTRAINT historias_clinicas_fk_paciente
+FOREIGN KEY (dni_paciente) REFERENCES pacientes(dni) ON DELETE CASCADE;
+
+-- Eliminar la clave foránea existente
+ALTER TABLE pruebas_aplicadas
+DROP FOREIGN KEY pruebas_aplicadas_fk_paciente;
+
+-- Agregar la clave foránea con la opción de eliminación en cascada
+ALTER TABLE pruebas_aplicadas
+ADD CONSTRAINT pruebas_aplicadas_fk_paciente
+FOREIGN KEY (dni_paciente) REFERENCES pacientes(dni) ON DELETE CASCADE;
 
 
 

@@ -37,7 +37,7 @@ body {
 .sidebar a {
     color: #ecf0f1;
     text-decoration: none;
-    margin: 15px 0;
+    margin: 10px 0;
     display: flex;
     align-items: center;
     padding: 10px;
@@ -58,7 +58,7 @@ body {
 }
 
 .sidebar img.logo {
-    width: 120px;
+    width: 100px;
     margin: 20px 0;
 }
 

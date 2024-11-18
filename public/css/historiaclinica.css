@@ -7,9 +7,15 @@ body {
 
 .container {
     display: flex;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
 }
-
+.contenedorTablaHistoria{
+    width: 100%;
+}
+.contenedorTablaHistoria > h2{
+    text-align: center;
+}
 .sidebar {
     width: 250px;
     background-color: #2c3e50;
@@ -37,7 +43,7 @@ body {
 .sidebar a {
     color: #ecf0f1;
     text-decoration: none;
-    margin: 15px 0;
+    margin: 10px 0;
     display: flex;
     align-items: center;
     padding: 10px;
@@ -58,17 +64,18 @@ body {
 }
 
 .sidebar img.logo {
-    width: 120px;
+    width: 100px;
     margin: 20px 0;
 }
 
 .main-content {
     flex-grow: 1;
     padding: 20px;
-    margin-left: 250px; /* Same as sidebar width */
-    position: relative;
+    margin-left: 250px;
+    background-color: #f4f7fb;
 }
 
+/* Botón de logout */
 .logout-button {
     position: absolute;
     top: 20px;
@@ -86,13 +93,15 @@ body {
     background-color: #c0392b;
 }
 
+/* Formulario */
 .form-container {
     background: #fff;
-    padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 80%;
     max-width: 800px;
-    margin: auto;
+    margin: 30px auto;
+    padding: 20px;
 }
 
 .form-container h2 {
@@ -100,21 +109,9 @@ body {
     margin-bottom: 20px;
 }
 
-.form-container label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
-}
-
-.form-container input[type=text], 
-.form-container input[type=email],
-.form-container input[type=tel],
-.form-container input[type=date],
-.form-container input[type=time],
-.form-container input[type=file],
-.form-container select,
-.form-container textarea {
-    width: calc(100% - 22px);
+/* Estilos de los inputs del formulario */
+.form-container input, .form-container select, .form-container textarea {
+    width: 100%;
     padding: 10px;
     margin-bottom: 15px;
     border: 1px solid #ccc;
@@ -122,11 +119,12 @@ body {
     box-sizing: border-box;
 }
 
+/* Botones */
 .form-container button {
     background-color: #2ecc71;
     color: white;
     padding: 10px 20px;
-    margin: 10px 5px 0 0;
+    margin-bottom: 10px;
     border: none;
     cursor: pointer;
     border-radius: 5px;
@@ -137,70 +135,97 @@ body {
 .form-container button:hover {
     background-color: #27ae60;
 }
-/* Asegúrate de que este CSS esté en tu archivo css/historiaclinica.css */
 
+/* Estilos de la tabla */
 .tabla-personalizada {
     width: 100%;
     border-collapse: collapse;
     margin-top: 20px;
-    background: #ffffff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-    overflow: hidden;
 }
 
-.tabla-personalizada thead {
+.tabla-personalizada th, .tabla-personalizada td {
+    padding: 5px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.tabla-personalizada th {
     background-color: #34495e;
     color: #ecf0f1;
 }
 
-.tabla-personalizada th, .tabla-personalizada td {
-    padding: 15px;
-    text-align: left;
-    white-space: nowrap;
-}
-
-.tabla-personalizada th {
-    font-weight: bold;
-    text-transform: uppercase;
-    padding: 15px;
-    border-bottom: 2px solid #2c3e50;
-}
-
-.tabla-personalizada tbody tr:nth-child(even) {
-    background-color: #f9f9f9;
-}
-
 .tabla-personalizada tbody tr:hover {
-    background-color: #94bbb469;
-    /* color: #ffffff; */
+    background-color: #f1f1f1;
+    cursor: pointer;
 }
 
 .tabla-personalizada td {
-    border-bottom: 1px solid #ddd;
-    padding: 10px 15px;
+    max-width: 200px;
+    white-space: normal;
+    word-wrap: break-word;
+    /* background-color: #27ae60; */
+    font-size: 12px;
+   
+}
+
+.campo-largo {
+    max-height: 100px;
+    overflow-y: auto;
+    padding-right: 10px;
+    color: #2c3e50;
+    font-size: 0.9em;
 }
 
 .tabla-personalizada a {
     color: #3498db;
-    text-decoration: none;
-}
-
-.tabla-personalizada a:hover {
     text-decoration: underline;
 }
 
+.tabla-personalizada a:hover {
+    color: #2980b9;
+}
+
+/* Botones dentro de la tabla */
 .tabla-personalizada button {
-    background-color: #e74c3c;
-    color: #ffffff;
+    background-color: #f39c12;
     border: none;
-    padding: 6px 12px;
-    border-radius: 4px;
+    padding: 5px 10px;
+    color: white;
     cursor: pointer;
-    font-size: 0.9em;
-    transition: background-color 0.3s ease;
+    border-radius: 5px;
 }
 
 .tabla-personalizada button:hover {
+    background-color: #e67e22;
+}
+
+.tabla-personalizada form button {
+    background-color: #e74c3c;
+}
+
+.tabla-personalizada form button:hover {
     background-color: #c0392b;
 }
+.campo-largo {
+    position: relative;
+    max-height: none;
+    overflow: hidden;
+    font-size: 0.9em;
+    transition: max-height 0.3s ease-out;
+}
+
+a {
+    color: #3498db;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #2980b9;
+}
+
+.campo-largo a {
+    position: absolute;
+    bottom: 5px;
+    right: 0;
+}
+
